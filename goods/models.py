@@ -8,6 +8,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+        ordering = ('pk',)
 
     def __str__(self):
         return self.title
@@ -19,7 +20,7 @@ class Good(models.Model):
         ('white','Белое'),
     )
 
-    image = models.ImageField(verbose_name='Изображение')
+    image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
     category = models.ForeignKey(Category,verbose_name = 'Категория', null = True, blank = True, on_delete = models.CASCADE)
     color = models.CharField(verbose_name = 'Цвет', choices = COLORS_CHOICES, max_length = 255, default = 'red')
     title = models.CharField(max_length = 255, verbose_name = 'Заголовок')

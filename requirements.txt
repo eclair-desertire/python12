@@ -1,2 +1,4 @@
 Django
 Pillow
+django-jazzmin
+django-extensions
