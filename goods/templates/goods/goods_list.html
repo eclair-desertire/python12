@@ -1,16 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOODS LIST</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <h1>ПРИВЕТ МИР</h1>
-    <img src="{% static 'img/img1.jpg' %}" alt="">
-    <a href="{% url 'good_new' %}">Создать новый товар!</a>
+{% extends 'goods/base.html' %}
+
+{% block title %} GOODS LIST {% endblock title%}
+
+{% block content %}
+
+<a href="{% url 'good_new' %}">Создать новый товар!</a>
     {% for i in goods %}
     <br>
         {% if i.price > 1000 %}
@@ -21,5 +15,6 @@
         {% endif %}
     <br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock content %}
+
