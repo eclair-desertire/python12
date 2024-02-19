@@ -1,22 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOODS LIST</title>
-    <style>
-        .title{
-            color: blue;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <h1>ПРИВЕТ МИР</h1>
+    <img src="{% static 'img/img1.jpg' %}" alt="">
+    <a href="{% url 'good_new' %}">Создать новый товар!</a>
     {% for i in goods %}
     <br>
         {% if i.price > 1000 %}
         
-        <h1 class="title" style="opacity: 0.4;"><a href="{% url 'good_detail' pk=i.pk %}">{{i.title}}</a></h1>
+        <h1 class="title" ><a href="{% url 'good_detail' pk=i.pk %}">{{i.title}}</a></h1>
         <img src="{{i.image.url}}" alt="">
         <h2>{{i.price}}</h2>
         {% endif %}

@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{% url 'good_edit' pk=good.pk %}">Изменить</a>
     <h1 class="title" style="opacity: 0.4;">{{good.title}}</h1>
     <img src="{{good.image.url}}" alt="">
     <h2>{{good.price}}</h2>
