@@ -2,3 +2,6 @@ Django
 Pillow
 django-jazzmin
 django-extensions
+djangorestframework
+drf-spectacular
+drf-spectacular-sidecar
