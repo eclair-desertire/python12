@@ -12,7 +12,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
-
+    
 
 class Good(models.Model):
     COLORS_CHOICES = (
@@ -21,7 +21,7 @@ class Good(models.Model):
     )
 
     image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
-    category = models.ForeignKey(Category,verbose_name = 'Категория', null = True, blank = True, on_delete = models.CASCADE)
+    category = models.ForeignKey(Category,verbose_name = 'Категория', null = True, blank = True, on_delete = models.CASCADE, related_name = 'goods')
     color = models.CharField(verbose_name = 'Цвет', choices = COLORS_CHOICES, max_length = 255, default = 'red')
     title = models.CharField(max_length = 255, verbose_name = 'Заголовок')
     price = models.IntegerField(default = 0, verbose_name = 'Цена')
